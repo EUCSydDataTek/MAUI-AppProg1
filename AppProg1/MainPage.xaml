@@ -1,18 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:AppProg1.Models"
              x:Class="AppProg1.MainPage">
 
-    <VerticalStackLayout VerticalOptions="Center"
-                         HorizontalOptions="Center"
-                         Spacing="20"
-                         WidthRequest="200">
-        <Label FontSize="Title"
-               BindingContext="{x:Reference TextEntry}"
-               Text="{Binding Text}"
-               HorizontalTextAlignment="Center"/>
-        <Entry x:Name="TextEntry"
-                Placeholder="Enter some text..." />
-    </VerticalStackLayout>  
+    <VerticalStackLayout Margin="20" Spacing="20"
+                        x:DataType="model:Pie">
+
+        <Label Text="{Binding Id, StringFormat='ID: {0}'}"/>
+
+        <VerticalStackLayout x:Name="MainStackLayout"                  
+                            Spacing="20">
+            <HorizontalStackLayout>
+                <Label Text="Pie name: "/>
+                <Label Text="{Binding PieName}"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Price: "/>
+                <Label Text="{Binding Price}"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
 
 </ContentPage>
