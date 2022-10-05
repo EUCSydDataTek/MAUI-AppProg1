@@ -7,21 +7,20 @@
     <VerticalStackLayout Margin="20" Spacing="20"
                         x:DataType="model:Pie">
 
-        <Label Text="{Binding Id, StringFormat='ID: {0}'}"/>
+        <HorizontalStackLayout >
+            <Label Text="Pie name: " 
+                   VerticalOptions="Center"/>
+            <Entry Text="{Binding PieName}"/>
+        </HorizontalStackLayout>
 
-        <VerticalStackLayout x:Name="MainStackLayout"                  
-                            Spacing="20">
-            <HorizontalStackLayout>
-                <Label Text="Pie name: "/>
-                <Label Text="{Binding PieName}"/>
-            </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Price: "
+                   VerticalOptions="Center"/>
+            <Entry Text="{Binding Price, Mode=OneWay}"/>
+        </HorizontalStackLayout>
 
-            <HorizontalStackLayout>
-                <Label Text="Price: "/>
-                <Label Text="{Binding Price}"/>
-            </HorizontalStackLayout>
+        <Button Text="Increment Price" Clicked="btnIncreasePrice_Clicked" />
 
-        </VerticalStackLayout>
     </VerticalStackLayout>
 
 </ContentPage>

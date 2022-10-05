@@ -4,21 +4,26 @@ namespace AppProg1;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
-	{
-		InitializeComponent();
+    public Pie CherryPie { get; set; }
 
-        // Oprettelse af Pie-objekt i koden
-        Pie pie = new Pie
+    public MainPage()
+    {
+        InitializeComponent();
+
+        CherryPie = new Pie
         {
             Id = 1,
             PieName = "Cherry Pie",
             Price = 20
         };
 
-        MainStackLayout.BindingContext = pie;
+        this.BindingContext = CherryPie;
+    }
 
-        //this.BindingContext = pie;
+    private void btnIncreasePrice_Clicked(object sender, System.EventArgs e)
+    {
+        CherryPie.Price++;
+        DisplayAlert("Price increaced!", $"{CherryPie.PieName} has the Price = {CherryPie.Price}", "Ok");
     }
 }
 
