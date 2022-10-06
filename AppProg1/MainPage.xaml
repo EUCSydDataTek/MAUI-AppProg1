@@ -2,25 +2,106 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:AppProg1.Models"
-             x:Class="AppProg1.MainPage">
+             xmlns:local="clr-namespace:AppProg1"
+             xmlns:vm="clr-namespace:AppProg1.ViewModels"
+             x:Class="AppProg1.MainPage"
+             x:DataType="model:Pie">
 
-    <VerticalStackLayout Margin="20" Spacing="20"
-                        x:DataType="model:Pie">
 
-        <HorizontalStackLayout >
-            <Label Text="Pie name: " 
-                   VerticalOptions="Center"/>
-            <Entry Text="{Binding PieName}"/>
-        </HorizontalStackLayout>
 
-        <HorizontalStackLayout>
-            <Label Text="Price: "
-                   VerticalOptions="Center"/>
-            <Entry Text="{Binding Price, Mode=OneWay}"/>
-        </HorizontalStackLayout>
+    <!--#1 Binding direct to Single Object: x:DataType="model:Pie"             and Binding ImageUrl -->
+    <!--#2 Binding via Page  and  Property: x:DataType="local:MainPage"        and Binding Pie.ImageUrl -->
+    <!--#3 Binding via an extra  ViewModel: x:DataType="vm:PieDetailViewModel" and Binding Pie.ImageUrl -->
+    <ScrollView>
+        <Grid RowDefinitions="50,150,50,50,200,50,50,50,*" 
+              ColumnDefinitions="4*, 6*" 
+              Padding="10" >
 
-        <Button Text="Increment Price" Clicked="btnIncreasePrice_Clicked" />
-
-    </VerticalStackLayout>
+            <!--<Label Text="{Binding UserName}" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2" 
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />-->
+            <Image Grid.Column="0"
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="2"
+                   Source="{Binding ImageUrl}"
+                   Margin="10" 
+                   WidthRequest="200" 
+                   HeightRequest="200" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
+            <Label Text="Pie name" 
+                   Grid.Row="2" 
+                   Grid.Column="0"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="DarkGray" />
+            <Entry Grid.Row="2"
+                   Grid.Column="1"
+                   Text="{Binding PieName, Mode=TwoWay}" 
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" />
+            <Label Text="Price" 
+                   Grid.Row="3" 
+                   Grid.Column="0"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="DarkGray" />
+            <Entry Grid.Row="3"
+               Grid.Column="1"
+                   Text="{Binding Price, Mode=TwoWay}" 
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" />
+            <Label Text="Description" 
+                   Grid.Row="4" 
+                   Grid.Column="0"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="DarkGray" />
+            <Editor Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding Description, Mode=TwoWay}" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" 
+                    FontSize="Small"/>
+            <Label Text="In stock?" 
+                   Grid.Row="5" 
+                   Grid.Column="0"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="DarkGray" />
+            <Switch Grid.Row="5"
+                    Grid.Column="1"
+                    IsToggled="{Binding InStock, Mode=TwoWay}" />
+            <Label Text="Available date" 
+                   Grid.Row="6" 
+                   Grid.Column="0"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="DarkGray" />
+            <DatePicker Grid.Row="6"
+                        Grid.Column="1"
+                        Date="{Binding AvailableFromDate, Mode=TwoWay}" />
+            <Button x:Name="SavePieButton" 
+                    Clicked="SavePieButton_OnClicked" 
+                    Text="Save Pie" 
+                    Grid.Row="7" 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    BackgroundColor="#22cfa7"
+                    TextColor="White"/>
+        </Grid>
+    </ScrollView>
 
 </ContentPage>
