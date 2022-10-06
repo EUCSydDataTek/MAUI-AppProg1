@@ -17,7 +17,7 @@
               ColumnDefinitions="4*, 6*" 
               Padding="10" >
 
-            <!--<Label Text="{Binding UserName}" 
+            <!--<Label Text="{Binding UserName}"  
                    Grid.Row="0" 
                    Grid.Column="0" 
                    Grid.ColumnSpan="2" 
