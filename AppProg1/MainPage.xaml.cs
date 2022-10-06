@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
         CreateMonkeyCollection();
-        MonkeyCollectionView.ItemsSource = Monkeys;
+        BindingContext = this;
     }
 
     void CreateMonkeyCollection()

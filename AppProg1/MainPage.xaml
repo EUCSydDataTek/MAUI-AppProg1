@@ -27,9 +27,8 @@
 
 
 
-    <CollectionView x:Name="MonkeyCollectionView" 
-                        ItemsSource="{Binding Monkeys}"
-                        SelectionMode="None">
+    <CollectionView ItemsSource="{Binding Monkeys}"
+                    SelectionMode="None">
 
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Monkey">
