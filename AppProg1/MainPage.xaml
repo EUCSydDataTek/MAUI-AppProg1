@@ -35,6 +35,25 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
+            <Label Text="UserId" />
+            <Entry x:Name="EntryUserId"
+                   BackgroundColor="LightGray"
+                   ClearButtonVisibility="WhileEditing"
+                   Keyboard="Email"/>
+
+            <Label Text="Password" />
+            <Entry x:Name="EntryPassword"
+                   BackgroundColor="LightGray"
+                   IsPassword="true"
+                   MaxLength="10"
+                   ReturnType="Done"/>
+
+            <Editor Placeholder="Begrund venligst din anmodning" 
+                    AutoSize="TextChanges"
+                    MaxLength="200"/>
+            <DatePicker />
+            <TimePicker />
+
         </VerticalStackLayout>
     </ScrollView>
 
