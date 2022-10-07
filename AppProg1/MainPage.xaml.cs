@@ -5,7 +5,8 @@ namespace AppProg1;
 
 public partial class MainPage : ContentPage
 {
-    public ObservableCollection<Monkey> Monkeys { get; set; }
+    public List<Monkey> Monkeys { get; set; }
+    //public ObservableCollection<Monkey> Monkeys { get; set; }
 
     public MainPage()
 	{
@@ -16,7 +17,8 @@ public partial class MainPage : ContentPage
 
     void CreateMonkeyCollection()
     {
-        Monkeys = new ObservableCollection<Monkey>();
+        Monkeys = new List<Monkey>();
+        //Monkeys = new ObservableCollection<Monkey>();
 
         Monkeys.Add(new Monkey
         {
@@ -153,6 +155,22 @@ public partial class MainPage : ContentPage
             Details = "The gelada, sometimes called the bleeding-heart monkey or the gelada baboon, is a species of Old World monkey found only in the Ethiopian Highlands, with large populations in the Semien Mountains. Theropithecus is derived from the Greek root words for \"beast-ape.\" Like its close relatives the baboons, it is largely terrestrial, spending much of its time foraging in grasslands.",
             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gelada-Pavian.jpg/320px-Gelada-Pavian.jpg"
         });
+    }
+
+    private void AddMonkey_Clicked(object sender, EventArgs e)
+    {
+        Monkeys.Add(new Monkey
+        {
+            Name = "Gelada",
+            Location = "Ethiopia",
+            Details = "The gelada, sometimes called the bleeding-heart monkey or the gelada baboon, is a species of Old World monkey found only in the Ethiopian Highlands, with large populations in the Semien Mountains. Theropithecus is derived from the Greek root words for \"beast-ape.\" Like its close relatives the baboons, it is largely terrestrial, spending much of its time foraging in grasslands.",
+            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gelada-Pavian.jpg/320px-Gelada-Pavian.jpg"
+        });
+    }
+
+    private void DeleteMonkey_Clicked(object sender, EventArgs e)
+    {
+        Monkeys.Remove(Monkeys.FirstOrDefault());
     }
 }
 

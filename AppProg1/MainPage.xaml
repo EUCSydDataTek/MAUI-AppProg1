@@ -7,6 +7,10 @@
              x:DataType="local:MainPage"
              Title="CollectionView Demo">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddMonkey_Clicked" />
+        <ToolbarItem Text="Delete" Clicked="DeleteMonkey_Clicked" />
+    </ContentPage.ToolbarItems>
 
     <!--<CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:Monkey}">
@@ -28,20 +32,20 @@
 
 
     <CollectionView ItemsSource="{Binding Monkeys}"
-                    SelectionMode="None">
+                SelectionMode="None">
 
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Monkey">
                 <Grid Padding="10">
-                    <Frame HeightRequest="125">
+                    <Frame HeightRequest="125" HasShadow="True">
                         <Grid Padding="0" ColumnDefinitions="125,*">
                             <Image Source="{Binding ImageUrl}"
-                                   Aspect="AspectFill"
-                                   WidthRequest="125"
-                                   HeightRequest="125"/>
+                                Aspect="AspectFill"
+                                WidthRequest="125"
+                                HeightRequest="125"/>
                             <VerticalStackLayout
-                                    Grid.Column="1"
-                                    Padding="10">
+                                Grid.Column="1"
+                                Padding="10">
                                 <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
                                 <Label Style="{StaticResource MediumLabel}" Text="{Binding Location}" />
                             </VerticalStackLayout>
