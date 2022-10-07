@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppProg1.MainPage">
 
-    <VerticalStackLayout Spacing="0" VerticalOptions="Center">
-        <BoxView Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"  />
-        <BoxView Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="Center"/>
-        <BoxView Color="Green" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+        <BoxView Grid.Row="0" Grid.Column="0" Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Start"  />
+        <BoxView Grid.Row="0" Grid.Column="1" Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="Center" VerticalOptions="Center"/>
+        <BoxView Grid.Row="1" Grid.Column="0" Color="Green" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" VerticalOptions="Start" />
+        <BoxView Grid.Row="1" Grid.Column="1" Color="Blue" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" VerticalOptions="End" />
+    </Grid>
 
 </ContentPage>
