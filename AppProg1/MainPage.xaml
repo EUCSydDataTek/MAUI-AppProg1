@@ -4,9 +4,9 @@
              x:Class="AppProg1.MainPage">
 
     <VerticalStackLayout Spacing="0" VerticalOptions="Center">
-        <BoxView Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"  />
-        <BoxView Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="Center"/>
-        <BoxView Color="Green" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" />
+        <BoxView Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
+        <BoxView Color="Yellow" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+        <BoxView Color="Green" HeightRequest="100" WidthRequest="100" HorizontalOptions="End" />
     </VerticalStackLayout>
 
 </ContentPage>
