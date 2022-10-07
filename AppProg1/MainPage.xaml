@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppProg1.MainPage">
 
-    <StackLayout Orientation="Vertical" Spacing="0">
-        <BoxView Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="End"  />
-        <BoxView Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End"/>
+    <VerticalStackLayout Spacing="0" VerticalOptions="Center">
+        <BoxView Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"  />
+        <BoxView Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="Center"/>
         <BoxView Color="Green" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" />
-    </StackLayout>
+    </VerticalStackLayout>
 
 </ContentPage>
