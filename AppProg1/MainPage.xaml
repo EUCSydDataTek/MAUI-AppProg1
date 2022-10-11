@@ -12,7 +12,7 @@
         <ToolbarItem Text="Delete" Clicked="DeleteMonkey_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <!--<CollectionView.ItemsSource>
+    <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:Monkey}">
                     <model:Monkey
                         Name="Baboon"
@@ -27,11 +27,11 @@
                         ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
                         Location="Vietnam" />
                 </x:Array>
-            </CollectionView.ItemsSource>-->
+            </CollectionView.ItemsSource>
 
 
 
-    <CollectionView ItemsSource="{Binding Monkeys}"
+    <!--<CollectionView ItemsSource="{Binding Monkeys}"
                 SelectionMode="None">
 
         <CollectionView.ItemTemplate>
@@ -55,6 +55,6 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
 
-    </CollectionView>
+    </CollectionView>-->
 
 </ContentPage>
