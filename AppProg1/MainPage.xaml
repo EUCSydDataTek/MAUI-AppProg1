@@ -12,7 +12,7 @@
                Text="{Binding Text}"
                HorizontalTextAlignment="Center"/>
         <Entry x:Name="TextEntry"
-                Placeholder="Enter some text..." />
+                Placeholder="Enter some text..." /> 
     </VerticalStackLayout>  
 
 </ContentPage>
