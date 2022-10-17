@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppProg1.MainPage">
 
-    <!--ViewCell virker ikke pga. bug: https://github.com/dotnet/maui/issues/10322-->
+    <!--ViewCell virker i Windows, men ikke i Android pga. bug: https://github.com/dotnet/maui/issues/10322-->
 
     <TableView Intent="Settings">
         <TableRoot>
