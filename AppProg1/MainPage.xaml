@@ -5,7 +5,7 @@
              x:Class="AppProg1.MainPage">
 
     <VerticalStackLayout Margin="20" Spacing="20"
-                        x:DataType="model:Pie">
+                         x:DataType="model:Pie">
 
         <Label Text="{Binding Id, StringFormat='ID: {0}'}"/>
 
