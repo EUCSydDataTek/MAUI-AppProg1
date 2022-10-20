@@ -1,4 +1,4 @@
-# MAUI-AppProg1 branch 9.2_Binding
+# 9.2_Binding
 
 Demonstrerer simpel data binding mellem en POCO Pie-klasse og nogle View-kontroller. Bindingen sker mellem UI og file-behind, altså i samme klasse.
 
