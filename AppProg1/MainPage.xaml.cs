@@ -6,7 +6,7 @@ namespace AppProg1;
 public partial class MainPage : ContentPage
 {
     public List<Monkey> Monkeys { get; set; }
-    //public ObservableCollection<Monkey> Monkeys { get; set; }
+    //public ObservableCollection<Monkey> Monkeys { get; set; }     // #3
 
     public MainPage()
 	{
@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
     void CreateMonkeyCollection()
     {
         Monkeys = new List<Monkey>();
-        //Monkeys = new ObservableCollection<Monkey>();
+        //Monkeys = new ObservableCollection<Monkey>();     // #3
 
         Monkeys.Add(new Monkey
         {

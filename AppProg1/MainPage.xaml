@@ -12,27 +12,28 @@
         <ToolbarItem Text="Delete" Clicked="DeleteMonkey_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type model:Monkey}">
-                    <model:Monkey
+    <CollectionView             
+                SelectionMode="None">
+
+        <!--#1. Med ItemsSource, der består af objekter oprettet direkte i xaml-->
+        <!--#2. Med ItemsSource="{Binding Monkeys}"-->
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:Monkey}">
+                <model:Monkey
                         Name="Baboon"
                         ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
                         Location="Africa and Asia" />
-                    <model:Monkey
+                <model:Monkey
                         Name="Capuchin Monkey"
                         ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
                         Location="Central and South America" />
-                    <model:Monkey
+                <model:Monkey
                         Name="Red-shanked douc"
                         ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
                         Location="Vietnam" />
-                </x:Array>
-            </CollectionView.ItemsSource>
+            </x:Array>
+        </CollectionView.ItemsSource>
 
-
-
-    <!--<CollectionView ItemsSource="{Binding Monkeys}"
-                SelectionMode="None">
 
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Monkey">
@@ -40,14 +41,14 @@
                     <Frame HeightRequest="125" HasShadow="True">
                         <Grid Padding="0" ColumnDefinitions="125,*">
                             <Image Source="{Binding ImageUrl}"
-                                Aspect="AspectFill"
-                                WidthRequest="125"
-                                HeightRequest="125"/>
+                                   Aspect="AspectFill"
+                                   WidthRequest="125"
+                                   HeightRequest="125"/>
                             <VerticalStackLayout
-                                Grid.Column="1"
-                                Padding="10">
-                                <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                <Label Style="{StaticResource MediumLabel}" Text="{Binding Location}" />
+                                    Grid.Column="1"
+                                    Padding="10">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Location}" />
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>
@@ -55,6 +56,5 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
 
-    </CollectionView>-->
-
+    </CollectionView>
 </ContentPage>
