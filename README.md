@@ -1,4 +1,4 @@
-# 9.2_Binding
+# Binding
 
 Demonstrerer simpel data binding mellem en POCO Pie-klasse og nogle View-kontroller. Bindingen sker mellem UI og file-behind, altså i samme klasse.
 
