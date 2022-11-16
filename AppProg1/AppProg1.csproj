@@ -48,4 +48,32 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\bear.png" />
+	  <None Remove="Resources\Images\cat.png" />
+	  <None Remove="Resources\Images\dog.png" />
+	  <None Remove="Resources\Images\dotnet.png" />
+	  <None Remove="Resources\Images\elephant.png" />
+	  <None Remove="Resources\Images\help.png" />
+	  <None Remove="Resources\Images\info.png" />
+	  <None Remove="Resources\Images\monkey.png" />
+	  <None Remove="Resources\Images\paw.png" />
+	  <None Remove="Resources\Images\photo.jpg" />
+	  <None Remove="Resources\Images\random.png" />
+	  <None Remove="Resources\Images\xamarinstore.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\CatsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DogsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MonkeysPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

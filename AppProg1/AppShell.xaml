@@ -3,6 +3,7 @@
     x:Class="AppProg1.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AppProg1.Views"
     xmlns:local="clr-namespace:AppProg1"
     Shell.FlyoutBehavior="Disabled">
 
@@ -10,5 +11,60 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <!--Ref.: .NET MAUI Shell tabs: https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/tabs-->
+
+    <!--************** Ex.1 **************-->
+    <!--<TabBar>
+        <Tab Title="Cats"
+             Icon="cat.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CatsPage}" />
+        </Tab>
+        <Tab Title="Dogs"
+             Icon="dog.png">
+            <ShellContent ContentTemplate="{DataTemplate views:DogsPage}" />
+        </Tab>
+    </TabBar>-->
+
+    <!--************** Ex.2 Kan forenkles til **************-->
+    <!--<TabBar>
+        <ShellContent Title="Cats"
+                      Icon="cat.png"
+                      ContentTemplate="{DataTemplate views:CatsPage}" />
+        <ShellContent Title="Dogs"
+                      Icon="dog.png"
+                      ContentTemplate="{DataTemplate views:DogsPage}" />
+    </TabBar>-->
+
+    <!--************** Ex.3 Bottom and top tabs **************-->
+    <!--<TabBar>
+        <Tab Title="Domestic"
+             Icon="paw.png">
+            <ShellContent Title="Cats"
+                          ContentTemplate="{DataTemplate views:CatsPage}" />
+            <ShellContent Title="Dogs"
+                          ContentTemplate="{DataTemplate views:DogsPage}" />
+        </Tab>
+        <Tab Title="Monkeys"
+             Icon="monkey.png">
+            <ShellContent ContentTemplate="{DataTemplate views:MonkeysPage}" />
+        </Tab>
+    </TabBar>-->
+
+    <!--************** Ex.4 Kan forenkles til **************-->
+    <!--<TabBar>
+        <Tab Title="Domestic"
+             Icon="paw.png">
+            <ShellContent Title="Cats"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatsPage}" />
+            <ShellContent Title="Dogs"
+                          Icon="dog.png"
+                          ContentTemplate="{DataTemplate views:DogsPage}" />
+        </Tab>
+        <ShellContent Title="Monkeys"
+                      Icon="monkey.png"
+                      ContentTemplate="{DataTemplate views:MonkeysPage}" />
+    </TabBar>-->
 
 </Shell>
