@@ -6,7 +6,8 @@
              Title="BearsPage">
 
     <CollectionView Margin="20"
-                    ItemsSource="{x:Static data:CatData.Cats}"
+                    ItemsSource="{x:Static data:BearData.Bears}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
-                    SelectionMode="None" />
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
 </ContentPage>

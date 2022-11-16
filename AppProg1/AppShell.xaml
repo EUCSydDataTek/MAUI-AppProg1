@@ -15,7 +15,7 @@
     </Shell.FlyoutHeader>
 
     <!--************** Ex.1 **************-->
-    <FlyoutItem Title="Cats"
+    <!--<FlyoutItem Title="Cats"
                 Icon="cat.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate views:CatsPage}" />
@@ -26,7 +26,7 @@
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate views:DogsPage}" />
         </Tab>
-    </FlyoutItem>
+    </FlyoutItem>-->
 
     <!--************** Ex.2 Kan forenkles til **************-->
     <!--<ShellContent Title="Cats"
@@ -38,7 +38,7 @@
 
 
     <!--************** Ex.3 Tabs vises når et FlyoutItem indeholder mere end et ShellContent objekt **************-->
-    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Domestic"
              Icon="paw.png">
             <ShellContent Title="Cats"
@@ -61,7 +61,7 @@
 
     <ShellContent Title="About"
                   Icon="info.png"
-                  ContentTemplate="{DataTemplate views:AboutPage}" />-->
+                  ContentTemplate="{DataTemplate views:AboutPage}" />
 
 
 

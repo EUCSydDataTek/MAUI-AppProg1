@@ -8,5 +8,6 @@
     <CollectionView Margin="20"
                     ItemsSource="{x:Static data:CatData.Cats}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
-                    SelectionMode="None" />
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
 </ContentPage>

@@ -9,5 +9,6 @@
     <CollectionView Margin="20"
                     ItemsSource="{x:Static data:DogData.Dogs}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
-                    SelectionMode="None" />
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
 </ContentPage>

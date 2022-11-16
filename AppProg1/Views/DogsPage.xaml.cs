@@ -8,4 +8,12 @@ public partial class DogsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        string dogName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
+
+        await Shell.Current.GoToAsync($"dogdetails?name={dogName}");
+    }
 }
