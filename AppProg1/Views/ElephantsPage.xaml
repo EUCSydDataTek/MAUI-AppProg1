@@ -6,7 +6,7 @@
              Title="ElephantsPage">
 
     <CollectionView Margin="20"
-                    ItemsSource="{x:Static data:CatData.Cats}"
+                    ItemsSource="{x:Static data:ElephantData.Elephants}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="None" />
 </ContentPage>
