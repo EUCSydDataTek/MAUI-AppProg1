@@ -13,10 +13,7 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <StackLayout
-            Margin="20"
-            x:DataType="viewmodels:MainPageViewModel"
-            VerticalOptions="StartAndExpand">
+        <VerticalStackLayout Margin="20" x:DataType="viewmodels:MainPageViewModel">
             <Picker
                 Title="Pick a Person"
                 ItemDisplayBinding="{Binding Name}"
@@ -24,7 +21,52 @@
                 SelectedItem="{Binding PersonSelectedItem}" />
             <Entry Placeholder="Name" Text="{Binding Name}" />
             <Entry Placeholder="Age" Text="{Binding Age, Converter={StaticResource ageFormatConverter}}" />
-        </StackLayout>
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="10"
+                RowDefinitions="auto,auto,auto"
+                RowSpacing="10">
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding ClearEntriesCommand}"
+                    Text="Clear" />
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding AddCommand}"
+                    Text="Save New Person" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Command="{Binding ShowAgeCommand}"
+                    Text="Show Age" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Command="{Binding MakeOlderCommand}"
+                    Text="Make Older" />
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Command="{Binding DeleteCommand}"
+                    Text="Delete Person" />
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Command="{Binding AnswerToLifeCommand}"
+                    CommandParameter="42"
+                    Text="AnswerToLife" />
+            </Grid>
+        </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>
