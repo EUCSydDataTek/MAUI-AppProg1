@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppProg1.Converters"
+    xmlns:viewmodels="clr-namespace:AppProg1.ViewModels">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:AgeFormatConverter x:Key="ageFormatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout
+            Margin="20"
+            x:DataType="viewmodels:MainPageViewModel"
+            VerticalOptions="StartAndExpand">
+            <Picker
+                Title="Pick a Person"
+                ItemDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding Persons}"
+                SelectedItem="{Binding PersonSelectedItem}" />
+            <Entry Placeholder="Name" Text="{Binding Name}" />
+            <Entry Placeholder="Age" Text="{Binding Age, Converter={StaticResource ageFormatConverter}}" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

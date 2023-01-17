@@ -1,4 +1,6 @@
-﻿namespace AppProg1;
+﻿using AppProg1.ViewModels;
+
+namespace AppProg1;
 
 public static class MauiProgram
 {
@@ -13,6 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MainPageViewModel>();
+
+        return builder.Build();
 	}
 }
