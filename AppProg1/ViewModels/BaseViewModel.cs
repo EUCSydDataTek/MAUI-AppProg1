@@ -1,12 +1,7 @@
-# BaseViewModel
-
-Her vises en standard **BaseViewModel**, som kan benyttes i de fleste projekter:
-
-```csharp
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MVVM.ViewModels;
+namespace AppProg1.ViewModels;
 public class BaseViewModel : INotifyPropertyChanged
 {
     bool isBusy = false;
@@ -23,6 +18,7 @@ public class BaseViewModel : INotifyPropertyChanged
         set { SetProperty(ref title, value); }
     }
 
+    #region INotifyPropertyChanged INPC
     protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName] string propertyName = "", Action onChanged = null)
     {
         if (EqualityComparer<T>.Default.Equals(backingStore, value))
@@ -34,7 +30,6 @@ public class BaseViewModel : INotifyPropertyChanged
         return true;
     }
 
-    #region INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
     {
@@ -46,5 +41,3 @@ public class BaseViewModel : INotifyPropertyChanged
     }
     #endregion
 }
-```
- 

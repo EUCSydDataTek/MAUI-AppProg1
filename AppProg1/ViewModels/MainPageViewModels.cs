@@ -1,10 +1,8 @@
 ﻿using AppProg1.Models;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace AppProg1.ViewModels;
-public class MainPageViewModel : INotifyPropertyChanged
+public class MainPageViewModel : BaseViewModel
 {
     public ObservableCollection<Person> Persons { get; }
 
@@ -20,16 +18,18 @@ public class MainPageViewModel : INotifyPropertyChanged
     }
     #endregion
 
-    #region PROPERTY CHANGE NOTIFICATION
+    #region PROPERTY
     Person _personSelectedItem = null;
     public Person PersonSelectedItem
     {
         get => _personSelectedItem;
         set
         {
-            Name = value.Name;
-            Age = value.Age;
-            OnPropertyChanged();
+            if (SetProperty(ref _personSelectedItem, value))
+            {
+                Name = value.Name;
+                Age = value.Age;
+            }
         }
     }
 
@@ -37,36 +37,14 @@ public class MainPageViewModel : INotifyPropertyChanged
     public string Name
     {
         get { return _name; }
-        set
-        {
-            if (value != _name)
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
+        set { SetProperty(ref _name, value); }
     }
 
     int _age;
     public int Age
     {
         get => _age;
-        set
-        {
-            if (value != _age)
-            {
-                _age = value;
-                OnPropertyChanged();
-            }
-        }
+        set { SetProperty(ref _age, value); }
     }
-    #endregion
-
-    #region INPC
-    public event PropertyChangedEventHandler PropertyChanged;
-    void OnPropertyChanged([CallerMemberName] string propertyName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-    #endregion
 }
+#endregion
