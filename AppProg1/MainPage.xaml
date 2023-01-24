@@ -14,7 +14,7 @@
                 Aspect="AspectFit"
                 HeightRequest="100"
                 HorizontalOptions="Center"
-                Source="dotnet_bot.svg" />
+                Source="dotnet_bot.png" />
 
             <Label
                 FontSize="32"
