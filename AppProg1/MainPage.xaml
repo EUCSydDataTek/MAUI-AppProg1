@@ -1,56 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppProg1.MainPage">
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
             Padding="30,0"
+            Spacing="25"
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                Aspect="AspectFit"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Source="dotnet_bot.svg" />
 
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="Hello, World!" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level2"
+                Text="Welcome to .NET Multi-platform App UI" />
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
 
             <Label Text="UserId" />
-            <Entry x:Name="EntryUserId"
-                   BackgroundColor="LightGray"
-                   ClearButtonVisibility="WhileEditing"
-                   Keyboard="Email"/>
+            <Entry
+                x:Name="EntryUserId"
+                BackgroundColor="LightGray"
+                ClearButtonVisibility="WhileEditing"
+                Keyboard="Email" />
 
             <Label Text="Password" />
-            <Entry x:Name="EntryPassword"
-                   BackgroundColor="LightGray"
-                   IsPassword="true"
-                   MaxLength="10"
-                   ReturnType="Done"/>
+            <Entry
+                x:Name="EntryPassword"
+                BackgroundColor="LightGray"
+                IsPassword="true"
+                MaxLength="10"
+                ReturnType="Done" />
 
-            <Editor Placeholder="Begrund venligst din anmodning" 
-                    AutoSize="TextChanges"
-                    MaxLength="200"/>
+            <Editor
+                AutoSize="TextChanges"
+                MaxLength="200"
+                Placeholder="Begrund venligst din anmodning" />
             <DatePicker />
             <TimePicker />
 
