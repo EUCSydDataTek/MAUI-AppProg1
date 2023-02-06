@@ -1,27 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppProg1.MainPage">
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Grid Padding="20" RowSpacing="10" RowDefinitions="50,50,*">
+    <Grid
+        Padding="20"
+        RowDefinitions="50,50,*"
+        RowSpacing="10">
 
         <HorizontalStackLayout Grid.Row="0" Spacing="10">
             <Label Text="Horizontal" VerticalOptions="Center" />
-            <Button Text="Start"  Clicked="OnHorizontalStartClicked"  />
-            <Button Text="Center" Clicked="OnHorizontalCenterClicked" />
-            <Button Text="End"    Clicked="OnHorizontalEndClicked"    />
-            <Button Text="Fill"   Clicked="OnHorizontalFillClicked"   />
+            <Button Clicked="OnHorizontalStartClicked" Text="Start" />
+            <Button Clicked="OnHorizontalCenterClicked" Text="Center" />
+            <Button Clicked="OnHorizontalEndClicked" Text="End" />
+            <Button Clicked="OnHorizontalFillClicked" Text="Fill" />
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout  Grid.Row="1" Spacing="10">
+        <HorizontalStackLayout Grid.Row="1" Spacing="10">
             <Label Text="Vertical" VerticalOptions="Center" />
-            <Button Text="Start"  Clicked="OnVerticalStartClicked"  />
-            <Button Text="Center" Clicked="OnVerticalCenterClicked" />
-            <Button Text="End"    Clicked="OnVerticalEndClicked"    />
-            <Button Text="Fill"   Clicked="OnVerticalFillClicked"   />
+            <Button Clicked="OnVerticalStartClicked" Text="Start" />
+            <Button Clicked="OnVerticalCenterClicked" Text="Center" />
+            <Button Clicked="OnVerticalEndClicked" Text="End" />
+            <Button Clicked="OnVerticalFillClicked" Text="Fill" />
         </HorizontalStackLayout>
 
-        <Label Grid.Row="2" FontSize="25" x:Name="target" BackgroundColor="Silver" Text="Hello" />
+        <Label
+            x:Name="target"
+            Grid.Row="2"
+            BackgroundColor="Silver"
+            FontSize="25"
+            Text="Hello" />
 
     </Grid>
 
