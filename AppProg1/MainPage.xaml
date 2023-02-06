@@ -1,24 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:model="clr-namespace:AppProg1.Models"
-             x:Class="AppProg1.MainPage">
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:AppProg1.Models">
 
-    <VerticalStackLayout Margin="20" Spacing="20"
-                         x:DataType="model:Pie">
+    <VerticalStackLayout
+        Margin="20"
+        x:DataType="model:Pie"
+        Spacing="20">
 
-        <Label Text="{Binding Id, StringFormat='ID: {0}'}"/>
+        <Label Text="{Binding Id, StringFormat='ID: {0}'}" />
 
-        <VerticalStackLayout x:Name="MainStackLayout"                  
-                            Spacing="20">
+        <VerticalStackLayout x:Name="MainStackLayout" Spacing="20">
             <HorizontalStackLayout>
-                <Label Text="Pie name: "/>
-                <Label Text="{Binding PieName}"/>
+                <Label Text="Pie name: " />
+                <Label Text="{Binding PieName}" />
             </HorizontalStackLayout>
 
             <HorizontalStackLayout>
-                <Label Text="Price: "/>
-                <Label Text="{Binding Price}"/>
+                <Label Text="Price: " />
+                <Label Text="{Binding Price}" />
             </HorizontalStackLayout>
 
         </VerticalStackLayout>
