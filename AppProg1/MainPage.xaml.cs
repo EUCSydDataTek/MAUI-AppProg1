@@ -2,23 +2,24 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private async void menuDetails_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new DetailsPage(entryName.Text));
+    }
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+    private async void menuDetailsModal_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new DetailsModalPage());
+    }
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private async void btnGotoDetails_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new DetailsPage(entryName.Text));
+    }
 }
 
