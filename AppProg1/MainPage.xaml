@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:model="clr-namespace:AppProg1.Models"
-             xmlns:local="clr-namespace:AppProg1"
-             x:Class="AppProg1.MainPage"
-             x:DataType="local:MainPage"
-             Title="CollectionView Demo">
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppProg1"
+    xmlns:model="clr-namespace:AppProg1.Models"
+    Title="CollectionView Demo"
+    x:DataType="local:MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddMonkey_Clicked" />
-        <ToolbarItem Text="Delete" Clicked="DeleteMonkey_Clicked" />
+        <ToolbarItem Clicked="AddMonkey_Clicked" Text="Add" />
+        <ToolbarItem Clicked="DeleteMonkey_Clicked" Text="Delete" />
     </ContentPage.ToolbarItems>
 
-    <CollectionView             
-                SelectionMode="None">
+    <CollectionView SelectionMode="None">
 
-        <!--#1. Med ItemsSource, der består af objekter oprettet direkte i xaml-->
-        <!--#2. Med ItemsSource="{Binding Monkeys}"-->
+        <!--  #1. Med ItemsSource, der består af objekter oprettet direkte i xaml  -->
+        <!--  #2. Med ItemsSource="{Binding Monkeys}"  -->
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type model:Monkey}">
                 <model:Monkey
-                        Name="Baboon"
-                        ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
-                        Location="Africa and Asia" />
+                    Name="Baboon"
+                    ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
+                    Location="Africa and Asia" />
                 <model:Monkey
-                        Name="Capuchin Monkey"
-                        ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                        Location="Central and South America" />
+                    Name="Capuchin Monkey"
+                    ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
+                    Location="Central and South America" />
                 <model:Monkey
-                        Name="Red-shanked douc"
-                        ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                        Location="Vietnam" />
+                    Name="Red-shanked douc"
+                    ImageUrl="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
+                    Location="Vietnam" />
             </x:Array>
         </CollectionView.ItemsSource>
 
@@ -38,15 +38,14 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Monkey">
                 <Grid Padding="10">
-                    <Frame HeightRequest="125" HasShadow="True">
+                    <Frame HasShadow="True" HeightRequest="125">
                         <Grid Padding="0" ColumnDefinitions="125,*">
-                            <Image Source="{Binding ImageUrl}"
-                                   Aspect="AspectFill"
-                                   WidthRequest="125"
-                                   HeightRequest="125"/>
-                            <VerticalStackLayout
-                                    Grid.Column="1"
-                                    Padding="10">
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="125"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="125" />
+                            <VerticalStackLayout Grid.Column="1" Padding="10">
                                 <Label Text="{Binding Name}" />
                                 <Label Text="{Binding Location}" />
                             </VerticalStackLayout>
