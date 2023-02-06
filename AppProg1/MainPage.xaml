@@ -1,13 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppProg1.MainPage">
+<ContentPage
+    x:Class="AppProg1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
-        <BoxView Grid.Row="0" Grid.Column="0" Color="Red" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Start"  />
-        <BoxView Grid.Row="0" Grid.Column="1" Color="Yellow" HeightRequest="100" WidthRequest="100"  HorizontalOptions="Center" VerticalOptions="Center"/>
-        <BoxView Grid.Row="1" Grid.Column="0" Color="Green" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" VerticalOptions="Start" />
-        <BoxView Grid.Row="1" Grid.Column="1" Color="Blue" HeightRequest="100" WidthRequest="100"  HorizontalOptions="End" VerticalOptions="End" />
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="0"
+            HeightRequest="100"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            WidthRequest="100"
+            Color="Red" />
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="1"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="100"
+            Color="Yellow" />
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="0"
+            HeightRequest="100"
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            WidthRequest="100"
+            Color="Green" />
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="1"
+            HeightRequest="100"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            WidthRequest="100"
+            Color="Blue" />
     </Grid>
 
 </ContentPage>
