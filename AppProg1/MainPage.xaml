@@ -3,28 +3,21 @@
     x:Class="AppProg1.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppProg1.Converters"
     xmlns:local="clr-namespace:AppProg1"
     xmlns:model="clr-namespace:AppProg1.Models"
-    xmlns:vm="clr-namespace:AppProg1.ViewModels"
     x:DataType="model:Pie">
 
-    <!--  #1 Binding direct to Single Object: x:DataType="model:Pie"             and Binding ImageUrl  -->
-    <!--  #2 Binding via Page  and  Property: x:DataType="local:MainPage"        and Binding Pie.ImageUrl  -->
-    <!--  #3 Binding via an extra  ViewModel: x:DataType="vm:PieDetailViewModel" and Binding Pie.ImageUrl  -->
+    <ContentPage.Resources>
+        <converters:CurrencyConverter x:Key="currencyConverter" />
+    </ContentPage.Resources>
+
     <ScrollView>
         <Grid
             Padding="10"
             ColumnDefinitions="4*, 6*"
             RowDefinitions="50,150,50,50,200,50,50,50,*">
 
-            <!--<Label Text="{Binding UserName}"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />-->
             <Image
                 Grid.Row="1"
                 Grid.Column="0"
@@ -32,7 +25,7 @@
                 Margin="10"
                 HeightRequest="200"
                 HorizontalOptions="Center"
-                Source="{Binding ImageUrl}"
+                Source="{Binding ImageUrl, TargetNullValue='https://www.bethanyspieshop.com/unknown.jpg'}"
                 VerticalOptions="Center"
                 WidthRequest="200" />
             <Label
@@ -46,7 +39,7 @@
             <Entry
                 Grid.Row="2"
                 Grid.Column="1"
-                HorizontalOptions="FillAndExpand"
+                HorizontalOptions="Fill"
                 Text="{Binding PieName, Mode=TwoWay}"
                 VerticalOptions="Center" />
             <Label
@@ -60,8 +53,8 @@
             <Entry
                 Grid.Row="3"
                 Grid.Column="1"
-                HorizontalOptions="FillAndExpand"
-                Text="{Binding Price, Mode=TwoWay}"
+                HorizontalOptions="Fill"
+                Text="{Binding Price, Converter={StaticResource currencyConverter}}"
                 VerticalOptions="Center" />
             <Label
                 Grid.Row="4"
@@ -75,8 +68,8 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 FontSize="Small"
-                HorizontalOptions="FillAndExpand"
-                Text="{Binding Description, Mode=TwoWay}"
+                HorizontalOptions="Fill"
+                Text="{Binding Description, Converter={converters:DoNothingConverter}}"
                 VerticalOptions="Center" />
             <Label
                 Grid.Row="5"
