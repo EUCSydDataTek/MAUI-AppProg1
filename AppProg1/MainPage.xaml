@@ -5,32 +5,92 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:AppProg1.Converters">
 
+    <!--  https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/converters?view=net-maui-7.0#binding-converter-properties  -->
+
     <ContentPage.Resources>
-        <converters:IntToBoolConverter x:Key="intToBool" />
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style TargetType="Switch">
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </ContentPage.Resources>
 
     <StackLayout Padding="10,0">
-        <Entry
-            x:Name="entry1"
-            Placeholder="enter search term"
-            Text=""
-            VerticalOptions="Center" />
-        <Button
-            HorizontalOptions="Center"
-            IsEnabled="{Binding Source={x:Reference entry1}, Path=Text.Length, Converter={StaticResource intToBool}}"
-            Text="Search"
-            VerticalOptions="Center" />
-        
-        <Entry
-            x:Name="entry2"
-            Placeholder="enter destination"
-            Text=""
-            VerticalOptions="Center" />
-        <Button
-            HorizontalOptions="Center"
-            IsEnabled="{Binding Source={x:Reference entry2}, Path=Text.Length, Converter={StaticResource intToBool}}"
-            Text="Submit"
-            VerticalOptions="Center" />
-    </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Subscribe?" />
+            <Switch x:Name="switch1" />
+            <Label>
+                <Label.Text>
+                    <Binding Path="IsToggled" Source="{x:Reference switch1}">
+                        <Binding.Converter>
+                            <converters:BoolToObjectConverter
+                                x:TypeArguments="x:String"
+                                FalseObject="No way!"
+                                TrueObject="Of course!" />
+                        </Binding.Converter>
+                    </Binding>
+                </Label.Text>
+            </Label>
+        </StackLayout>
 
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Allow popups?" />
+            <Switch x:Name="switch2" />
+            <Label>
+                <Label.Text>
+                    <Binding Path="IsToggled" Source="{x:Reference switch2}">
+                        <Binding.Converter>
+                            <converters:BoolToObjectConverter
+                                x:TypeArguments="x:String"
+                                FalseObject="No"
+                                TrueObject="Yes" />
+                        </Binding.Converter>
+                    </Binding>
+                </Label.Text>
+                <Label.TextColor>
+                    <Binding Path="IsToggled" Source="{x:Reference switch2}">
+                        <Binding.Converter>
+                            <converters:BoolToObjectConverter
+                                x:TypeArguments="Color"
+                                FalseObject="Red"
+                                TrueObject="Green" />
+                        </Binding.Converter>
+                    </Binding>
+                </Label.TextColor>
+            </Label>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Learn more?" />
+            <Switch x:Name="switch3" />
+            <Label FontSize="18" VerticalOptions="Center">
+                <Label.Style>
+                    <Binding Path="IsToggled" Source="{x:Reference switch3}">
+                        <Binding.Converter>
+                            <converters:BoolToObjectConverter x:TypeArguments="Style">
+                                <converters:BoolToObjectConverter.TrueObject>
+                                    <Style TargetType="Label">
+                                        <Setter Property="Text" Value="Indubitably!" />
+                                        <Setter Property="FontAttributes" Value="Italic, Bold" />
+                                        <Setter Property="TextColor" Value="Green" />
+                                    </Style>
+                                </converters:BoolToObjectConverter.TrueObject>
+
+                                <converters:BoolToObjectConverter.FalseObject>
+                                    <Style TargetType="Label">
+                                        <Setter Property="Text" Value="Maybe later" />
+                                        <Setter Property="FontAttributes" Value="None" />
+                                        <Setter Property="TextColor" Value="Red" />
+                                    </Style>
+                                </converters:BoolToObjectConverter.FalseObject>
+                            </converters:BoolToObjectConverter>
+                        </Binding.Converter>
+                    </Binding>
+                </Label.Style>
+            </Label>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
