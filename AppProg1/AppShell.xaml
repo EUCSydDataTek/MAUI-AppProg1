@@ -7,10 +7,10 @@
     xmlns:views="clr-namespace:AppProg1.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
 
     <!--  Ref.: .NET MAUI Shell tabs: https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/tabs  -->
 
