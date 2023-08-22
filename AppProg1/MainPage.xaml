@@ -3,39 +3,37 @@
     x:Class="AppProg1.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Vertical Stacklayout Alignment">
+    Title="VerticalStacklayout Alignment">
 
-    <Grid
-        Padding="20"
-        RowDefinitions="50,50,*"
-        RowSpacing="10">
+    <!--  5. Sætter man VerticalOptions på selve VerticalStackLayout, vil det have indflydelse på indholdets placering på siden  -->
+    <VerticalStackLayout Padding="10" Spacing="30">
 
-        <HorizontalStackLayout Grid.Row="0" Spacing="10">
-            <Label Text="Horizontal" VerticalOptions="Center" />
-            <Button Clicked="OnHorizontalStartClicked" Text="Start" />
-            <Button Clicked="OnHorizontalCenterClicked" Text="Center" />
-            <Button Clicked="OnHorizontalEndClicked" Text="End" />
-            <Button Clicked="OnHorizontalFillClicked" Text="Fill" />
-        </HorizontalStackLayout>
+        <!--  1. Default fylder en kontrol hele bredden af containeren (HorizontalOptions="Fill") og centrerer sit indhold  -->
+        <Button Text="Default Width and HorizontalOption" />
 
-        <HorizontalStackLayout Grid.Row="1" Spacing="10">
-            <Label Text="Vertical" VerticalOptions="Center" />
-            <Button Clicked="OnVerticalStartClicked" Text="Start" />
-            <Button Clicked="OnVerticalCenterClicked" Text="Center" />
-            <Button Clicked="OnVerticalEndClicked" Text="End" />
-            <Button Clicked="OnVerticalFillClicked" Text="Fill" />
-        </HorizontalStackLayout>
+        <!--  2. Når der sættes en WidthRequest på en kontrol, så fylder den kun den angivne bredde  -->
+        <Button Text="Default HorizontalOption" WidthRequest="100" />
 
-        <VerticalStackLayout
-            x:Name="verticalLayout"
-            Grid.Row="2"
-            BackgroundColor="Aquamarine">
-            <Label
-                x:Name="target"
-                BackgroundColor="Silver"
-                FontSize="25"
-                Text="Hello" />
-        </VerticalStackLayout>
-    </Grid>
+        <!--  3. HorizontalOptions kan bruges til at styre hvordan en kontrol placeres i forhold til containeren  -->
+        <Button
+            HorizontalOptions="Start"
+            Text="Start"
+            WidthRequest="100" />
+        <Button
+            HorizontalOptions="Center"
+            Text="Center"
+            WidthRequest="100" />
+        <Button
+            HorizontalOptions="End"
+            Text="End"
+            WidthRequest="100" />
+
+        <!--  4. VerticalOptions har ingen effekt på et VerticalStackPanel og bør undgås  -->
+        <Button
+            Text="End"
+            VerticalOptions="End"
+            WidthRequest="100" />
+
+    </VerticalStackLayout>
 
 </ContentPage>
