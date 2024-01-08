@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:AppProg1.Converters">
 
-    <!--  https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/converters?view=net-maui-7.0#binding-converter-properties  -->
+    <!--  https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/converters?view=net-maui-8.0#binding-converter-properties  -->
 
     <ContentPage.Resources>
         <Style TargetType="Label">
