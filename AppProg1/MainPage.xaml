@@ -25,7 +25,7 @@
                 Margin="10"
                 HeightRequest="200"
                 HorizontalOptions="Center"
-                Source="{Binding ImageUrl, TargetNullValue='https://www.bethanyspieshop.com/unknown.jpg'}"
+                Source="{Binding ImageUrl}"
                 VerticalOptions="Center"
                 WidthRequest="200" />
             <Label
