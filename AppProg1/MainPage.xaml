@@ -10,6 +10,7 @@
 
     <ContentPage.Resources>
         <converters:CurrencyConverter x:Key="currencyConverter" />
+        <converters:BoolColorConverter x:Key="boolColorConverter" />
     </ContentPage.Resources>
 
     <ScrollView>
@@ -80,6 +81,7 @@
                 TextColor="DarkGray"
                 VerticalOptions="Center" />
             <Switch
+                x:Name="swInStock"
                 Grid.Row="5"
                 Grid.Column="1"
                 IsToggled="{Binding InStock, Mode=TwoWay}" />
@@ -100,7 +102,7 @@
                 Grid.Row="7"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                BackgroundColor="#22cfa7"
+                BackgroundColor="{Binding Path=IsToggled, Source={x:Reference swInStock}, Converter={StaticResource boolColorConverter}}"
                 Clicked="SavePieButton_OnClicked"
                 HorizontalOptions="Center"
                 Text="Save Pie"
