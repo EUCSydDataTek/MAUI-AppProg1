@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="AppProg1.MainPage"
+    x:Class="AppProg1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:AppProg1.Converters"
@@ -15,12 +15,11 @@
     <ScrollView>
         <StackLayout
             Margin="20"
-            x:DataType="viewmodels:MainPageViewModel"
-            VerticalOptions="StartAndExpand">
+            x:DataType="viewmodels:MainPageViewModel">
             <Picker
                 Title="Pick a Person"
-                ItemDisplayBinding="{Binding Name}"
                 ItemsSource="{Binding Persons}"
+                ItemDisplayBinding="{Binding Name}"           
                 SelectedItem="{Binding PersonSelectedItem}" />
             <Entry Placeholder="Name" Text="{Binding Name}" />
             <Entry Placeholder="Age" Text="{Binding Age, Converter={StaticResource ageFormatConverter}}" />
