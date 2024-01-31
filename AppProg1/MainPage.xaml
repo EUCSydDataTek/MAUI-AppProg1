@@ -10,7 +10,7 @@
 
     <ContentPage.Resources>
         <converters:CurrencyConverter x:Key="currencyConverter" />
-        <!--<converters:BoolColorConverter x:Key="boolColorConverter" />-->
+        <converters:IntToBoolConverter x:Key="intToBoolConverter" />
     </ContentPage.Resources>
 
     <ScrollView>
@@ -26,6 +26,7 @@
                 Margin="10"
                 HeightRequest="200"
                 HorizontalOptions="Center"
+                IsVisible="{Binding Source={x:Reference entryName}, Path=Text.Length, Converter={StaticResource intToBoolConverter}}"
                 Source="{Binding ImageUrl}"
                 VerticalOptions="Center"
                 WidthRequest="200" />
@@ -38,6 +39,7 @@
                 TextColor="DarkGray"
                 VerticalOptions="Center" />
             <Entry
+                x:Name="entryName"
                 Grid.Row="2"
                 Grid.Column="1"
                 HorizontalOptions="Fill"

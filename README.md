@@ -5,23 +5,8 @@ Sætter $ foran værdien.
 
 &nbsp;
 
-## DoNothingConverter
-Benyttes til debug.
-
-Viser også en alternativ måde at instantiere en converter med `IMarkupExtension`: 
-```csharp
-public class DoNothingConverter : IValueConverter, IMarkupExtension
-{
-    public object ProvideValue(IServiceProvider serviceProvider)
-    { return this; }
-
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    { return value; }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    { return value; }
-}
-```
+## IntToBoolConverter
+PieImage er styret af Entry, så når der er indtastet en værdi, vises billedet.
 
 &nbsp;
 
@@ -75,6 +60,26 @@ public class BoolColorConverter<T> : IValueConverter
         </Binding.Converter>
     </Binding>
 </Button.BackgroundColor>
+```
+
+&nbsp;
+
+## DoNothingConverter
+Benyttes til debug.
+
+Viser også en alternativ måde at instantiere en converter med `IMarkupExtension`: 
+```csharp
+public class DoNothingConverter : IValueConverter, IMarkupExtension
+{
+    public object ProvideValue(IServiceProvider serviceProvider)
+    { return this; }
+
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    { return value; }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    { return value; }
+}
 ```
 
 &nbsp;
