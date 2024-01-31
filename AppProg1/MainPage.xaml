@@ -10,7 +10,7 @@
 
     <ContentPage.Resources>
         <converters:CurrencyConverter x:Key="currencyConverter" />
-        <converters:BoolColorConverter x:Key="boolColorConverter" />
+        <!--<converters:BoolColorConverter x:Key="boolColorConverter" />-->
     </ContentPage.Resources>
 
     <ScrollView>
@@ -102,12 +102,22 @@
                 Grid.Row="7"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                BackgroundColor="{Binding Path=IsToggled, Source={x:Reference swInStock}, Converter={StaticResource boolColorConverter}}"
                 Clicked="SavePieButton_OnClicked"
                 HorizontalOptions="Center"
                 Text="Save Pie"
                 TextColor="White"
-                VerticalOptions="Start" />
+                VerticalOptions="Start">
+                <Button.BackgroundColor>
+                    <Binding Path="IsToggled" Source="{x:Reference swInStock}">
+                        <Binding.Converter>
+                            <converters:BoolColorConverter
+                                x:TypeArguments="Color"
+                                FalseColor="Red"
+                                TrueColor="Green" />
+                        </Binding.Converter>
+                    </Binding>
+                </Button.BackgroundColor>
+            </Button>
         </Grid>
     </ScrollView>
 
