@@ -10,23 +10,21 @@
     <!--  Ref.: .NET MAUI Shell flyout: https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/flyout  -->
 
     <!--  Oprettet i Controls folderen  -->
-    <Shell.FlyoutHeader>
+    <!--<Shell.FlyoutHeader>
         <controls:FlyoutHeader />
-    </Shell.FlyoutHeader>
+    </Shell.FlyoutHeader>-->
 
     <!--  ************** Ex.1 **************  -->
-    <!--<FlyoutItem Title="Cats"
-                Icon="cat.png">
+    <FlyoutItem Title="Cats" Icon="cat.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate views:CatsPage}" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Dogs"
-                Icon="dog.png">
+    <FlyoutItem Title="Dogs" Icon="dog.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate views:DogsPage}" />
         </Tab>
-    </FlyoutItem>-->
+    </FlyoutItem>
 
     <!--  ************** Ex.2 Kan forenkles til **************  -->
     <!--<ShellContent Title="Cats"
@@ -39,7 +37,7 @@
 
     <!--  ************** Ex.3 Tabs vises når et FlyoutItem indeholder mere end et ShellContent objekt **************  -->
     <!--  Tabs kan fjernes ved at sætte Shell.TabBarIsVisible="False" i Shell.xaml  -->
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Domestic" Icon="paw.png">
             <ShellContent
                 Title="Cats"
@@ -67,20 +65,23 @@
     <ShellContent
         Title="About"
         ContentTemplate="{DataTemplate views:AboutPage}"
-        Icon="info.png" />
+        Icon="info.png" />-->
 
 
 
     <!--  ************** Ex.4 Menu items **************  -->
-    <!--<ShellContent Title="Cats"
-                 Icon="cat.png"
-                 ContentTemplate="{DataTemplate views:CatsPage}" />
-   <ShellContent Title="Dogs"
-                 Icon="dog.png"
-                 ContentTemplate="{DataTemplate views:DogsPage}" />
-    <MenuItem Text="Help"
-              IconImageSource="help.png"
-              Command="{Binding HelpCommand}"
-              CommandParameter="https://learn.microsoft.com/dotnet/maui/fundamentals/shell" />-->
+    <!--<ShellContent
+        Title="Cats"
+        ContentTemplate="{DataTemplate views:CatsPage}"
+        Icon="cat.png" />
+    <ShellContent
+        Title="Dogs"
+        ContentTemplate="{DataTemplate views:DogsPage}"
+        Icon="dog.png" />
+    <MenuItem
+        Command="{Binding HelpCommand}"
+        CommandParameter="https://learn.microsoft.com/dotnet/maui/fundamentals/shell"
+        IconImageSource="help.png"
+        Text="Help" />-->
 
 </Shell>
