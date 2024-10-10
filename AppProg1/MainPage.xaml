@@ -10,6 +10,7 @@
 
     <ContentPage.Resources>
         <converters:CurrencyConverter x:Key="currencyConverter" />
+        <converters:EntryNotEmptyValidatorConverter x:Key="entryValidatorConverter" />
     </ContentPage.Resources>
 
     <ScrollView>
@@ -91,10 +92,11 @@
                 Text="Available date"
                 TextColor="DarkGray"
                 VerticalOptions="Center" />
-            <DatePicker
+            <Entry
+                x:Name="emailEntry"
                 Grid.Row="6"
                 Grid.Column="1"
-                Date="{Binding AvailableFromDate, Mode=TwoWay}" />
+                Text="{Binding Email}" />
             <Button
                 x:Name="SavePieButton"
                 Grid.Row="7"
@@ -103,6 +105,7 @@
                 BackgroundColor="#22cfa7"
                 Clicked="SavePieButton_OnClicked"
                 HorizontalOptions="Center"
+                IsEnabled="{Binding Source={x:Reference emailEntry}, Path=Text.Length, Converter={StaticResource entryValidatorConverter}}"
                 Text="Save Pie"
                 TextColor="White"
                 VerticalOptions="Start" />

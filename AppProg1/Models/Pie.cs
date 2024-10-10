@@ -10,7 +10,7 @@ public class Pie : INotifyPropertyChanged
     private double _price;
     private string _imageUrl;
     private bool _inStock;
-    private DateTime _availableFromDate;
+    private string _email;
 
     public int Id
     {
@@ -73,13 +73,13 @@ public class Pie : INotifyPropertyChanged
     }
 
 
-    public DateTime AvailableFromDate
+    public string Email
     {
-        get => _availableFromDate;
+        get => _email;
         set
         {
-            _availableFromDate = value;
-            RaisePropertyChanged(nameof(AvailableFromDate));
+            _email = value;
+            RaisePropertyChanged(nameof(Email));
         }
     }
 
