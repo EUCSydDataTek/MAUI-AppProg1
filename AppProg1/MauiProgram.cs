@@ -1,5 +1,6 @@
 ﻿using AppProg1.ViewModels;
 using AppProg1.Views;
+using Microsoft.Extensions.Logging;
 
 namespace AppProg1;
 
@@ -19,6 +20,11 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<MainPageViewModel>();
 
+#if DEBUG
+        builder.Logging.AddDebug();
+#endif
+
         return builder.Build();
-	}
+    }
 }
+
