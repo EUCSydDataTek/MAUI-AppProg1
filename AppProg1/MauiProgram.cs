@@ -1,4 +1,6 @@
-﻿namespace AppProg1;
+﻿using Microsoft.Extensions.Logging;
+
+namespace AppProg1;
 
 public static class MauiProgram
 {
@@ -13,6 +15,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
-	}
+#if DEBUG
+    		builder.Logging.AddDebug();
+#endif
+
+        return builder.Build();
+    }
 }
+

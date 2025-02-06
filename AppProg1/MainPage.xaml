@@ -17,8 +17,6 @@
             Grid.Row="0"
             Grid.Column="1"
             HeightRequest="100"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
             WidthRequest="100"
             Color="Yellow" />
         <BoxView
