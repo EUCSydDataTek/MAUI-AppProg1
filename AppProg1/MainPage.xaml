@@ -13,7 +13,7 @@
         <ToolbarItem Clicked="DeleteMonkey_Clicked" Text="Delete" />
     </ContentPage.ToolbarItems>
 
-    <CollectionView SelectionMode="None" ItemsSource="{Binding Monkeys}">
+    <CollectionView ItemsSource="{Binding Monkeys}" SelectionMode="None">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Monkey">
                 <Grid Padding="10">
