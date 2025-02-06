@@ -11,7 +11,7 @@
         <!--  1. Default fylder en kontrol hele bredden af containeren (HorizontalOptions="Fill") og centrerer sit indhold  -->
         <Button Text="Default Width and HorizontalOption" />
 
-        <!--  2. Når der sættes en WidthRequest på en kontrol, så fylder den kun den angivne bredde  -->
+        <!--  2. Når der sættes en WidthRequest på en kontrol, så fylder den kun den angivne bredde og centreres  -->
         <Button Text="Default HorizontalOption" WidthRequest="100" />
 
         <!--  3. HorizontalOptions kan bruges til at styre hvordan en kontrol placeres i forhold til containeren  -->
