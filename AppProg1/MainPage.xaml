@@ -15,6 +15,12 @@
             HorizontalTextAlignment="Center"
             Text="{Binding Text}" />
         <Entry x:Name="TextEntry" Placeholder="Enter some text..." />
+
+        <!--  Alternativ  -->
+        <!--<Label
+            FontSize="Title"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Source={x:Reference TextEntry}, Path=Text}" />-->
     </VerticalStackLayout>
 
 </ContentPage>
