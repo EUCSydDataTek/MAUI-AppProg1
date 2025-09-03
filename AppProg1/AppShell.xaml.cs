@@ -13,7 +13,7 @@ public partial class AppShell : Shell
 
         Routing.RegisterRoute("monkeydetails", typeof(MonkeyDetailPage));
         Routing.RegisterRoute("beardetails", typeof(BearDetailPage));
-        Routing.RegisterRoute("catdetails", typeof(CatDetailPage));
+        Routing.RegisterRoute(nameof(CatDetailPage), typeof(CatDetailPage));
         Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
         Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
     }
