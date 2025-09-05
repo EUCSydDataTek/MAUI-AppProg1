@@ -13,10 +13,7 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <StackLayout
-            Margin="20"
-            x:DataType="viewmodels:MainPageViewModel"
-            VerticalOptions="StartAndExpand">
+        <StackLayout Margin="20" x:DataType="viewmodels:MainPageViewModel">
             <Picker
                 Title="Pick a Person"
                 ItemDisplayBinding="{Binding Name}"
