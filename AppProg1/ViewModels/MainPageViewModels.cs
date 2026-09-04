@@ -78,7 +78,7 @@ public class MainPageViewModel : BaseViewModel
     // 2. Commands with inline Execute method
     private Command showAgeCommand;
     public ICommand ShowAgeCommand => showAgeCommand ??= new Command(
-        execute: () => Shell.Current.DisplayAlert("AgeButtonClicked", $"{PersonSelectedItem.Name} er {PersonSelectedItem.Age}", "OK"),
+        execute: async () => await Shell.Current.DisplayAlertAsync("AgeButtonClicked", $"{PersonSelectedItem.Name} er {PersonSelectedItem.Age}", "OK"),
         canExecute: () => _personSelectedItem != null
         );
 
@@ -105,7 +105,7 @@ public class MainPageViewModel : BaseViewModel
     private Command answerToLifeCommand;
     public ICommand AnswerToLifeCommand => answerToLifeCommand ??= new Command<string>
         (
-            execute: (string param) => Shell.Current.DisplayAlert("AnswerToLifeClicked", $"{param}", "OK")
+            execute: async (string param) => await Shell.Current.DisplayAlertAsync("AnswerToLifeClicked", $"{param}", "OK")
         );
 
 
